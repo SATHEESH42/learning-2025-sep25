@@ -1,0 +1,30 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build-job:
+  stage: build
+  script:
+    - echo "Building project files"
+    - # Insert build commands here
+
+test-job1:
+  stage: test
+  script:
+    - echo "Running tests (job 1)"
+    - # Insert test commands here
+
+test-job2:
+  stage: test
+  script:
+    - echo "Running tests (job 2 - longer)"
+    - sleep 20
+    - # Insert more test commands if needed
+
+deploy-prod:
+  stage: deploy
+  script:
+    - echo "Deploying to production from $CI_COMMIT_BRANCH"
+    - # Add deployment commands here
+  environment: production
